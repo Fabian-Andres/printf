@@ -4,32 +4,60 @@
 
 /**
  * _printf - writes the character c to stdout
- * @c: The character to print
+ * @format: The characters to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _printf(const char *format, ...)
 {
-    va_list vstring;
+	va_list varg;
 	int i;
-	char *c;
 
-	va_start(vstring, format);
-	for (i = 0; i < format; i++)
+	va_start(varg, format);
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		c = va_arg(vstring, char *);
-		if (c == NULL)
-            _putchar('n');
-            _putchar('i');
-            _putchar('l');
+		if (format == NULL)
+		{
+			_printf("(null)");
+			va_end(varg);
+			return (0);
+		}
 		else
-            if (c == '%')
-				_putchar(c, 0);
-			else 
-				_prinf(c);
-	}
-	_putchar('\n');
-	va_end(vstring);
+		{
+			if (format[i] == '%')
+			{
+				char nextchar = format[++i];
 
+				if (nextchar == 'c')
+				{
+					char c = va_arg(varg, char*);
+
+					_putchar(c);
+				}
+				else if (nextchar == 's')
+				{
+					char *c = va_arg(varg, char*);
+
+					_printf(c, 0);
+				}
+				else if (nextchar == 'i')
+				{
+					char *c = va_arg(varg, char*);
+
+					_printf(c, 0);
+				}
+				else
+				{
+					_putchar(nextchar);
+				}
+			}
+			else
+			{
+				_putchar(format[i]);
+			}
+		}
+	}
+	va_end(varg);
+	return (0);
 }
