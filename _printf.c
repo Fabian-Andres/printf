@@ -17,11 +17,10 @@ int _printf(const char *format, ...)
 	va_start(varg, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format == NULL)
+		if (format == NULL || va)
 		{
-			_printf("(null)");
 			va_end(varg);
-			return (0);
+			return (-1);
 		}
 		else
 		{
