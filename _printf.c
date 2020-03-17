@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list varg;
-	int i;
+	int i, s = 0;
 
 	va_start(varg, format);
 	for (i = 0; format[i] != '\0'; i++)
@@ -33,31 +33,25 @@ int _printf(const char *format, ...)
 				{
 					char c = va_arg(varg, char*);
 
-					_putchar(c);
+					s += _putchar(c);
 				}
 				else if (nextchar == 's')
 				{
 					char *c = va_arg(varg, char*);
 
-					_printf(c, 0);
-				}
-				else if (nextchar == 'i')
-				{
-					char *c = va_arg(varg, char*);
-
-					_printf(c, 0);
+					s += _printf(c, 0);
 				}
 				else
 				{
-					_putchar(nextchar);
+					s += _putchar(nextchar);
 				}
 			}
 			else
 			{
-				_putchar(format[i]);
+				s += _putchar(format[i]);
 			}
 		}
 	}
 	va_end(varg);
-	return (0);
+	return (s);
 }
