@@ -19,4 +19,5 @@ int _putchar(char cr);
 int (*get_function(char letter))(va_list);
 int print_string(va_list argumnt);
 int print_char(va_list argumnt);
+int print_d(va_list argumnt);
 #endif
