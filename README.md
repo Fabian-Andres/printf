@@ -46,7 +46,7 @@ In this example, printf has two arguments. The first is a string: "I am %d years
 Table of conversion specifiers
 -------------
 | Specifier  | Output | Example | Description |
-| ------------- | ------------- | ------------------------------ |
+| ------------- | ------------- | ------------------------------ | ------------- | 
 | **%c** |  Character   | H       |print a single character |
 | **%s** | Strings  | Holberton    | print a string of characters|
 | **%d** |  Double   | H       | print a decimal (base 10) number|
