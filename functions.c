@@ -39,25 +39,38 @@ int print_string(va_list argmnt)
 	return (i);
 }
 /**
- * get_function - function that compares characters to locate function.
- * @letter: character for compares.
- * Return: address function
+ * print_d - function that compares characters to locate function.
+ * @argmnt: List to integer.
+ * Return: nr
  */
-int (*get_function(char letter))(va_list)
+int print_d(va_list argmnt)
 {
-	int i;
+	int nr = 0;
+	int n = va_arg(argmnt, int);
+	unsigned int mod = 0, aux = 0;
+	int k = 1;
 
-	ft comparador[] = {
-		{'c', &print_char},
-		{'s', &print_string},
-		{'\0', NULL}};
-	for (i = 0 ; comparador[i].c != '\0' ; i++)
+	if (n < 0)
 	{
-		if (comparador[i].c == letter)
-			return (comparador[i].f);
+		mod = -n;
+		nr += _putchar('-');
 	}
-	return (NULL);
+	else
+		mod = n;
+	aux = mod;
+	while (aux / 10)
+	{
+		aux = aux / 10;
+		k *= 10;
+	}
+	aux = mod;
+	while (k != 0)
+	{
+		aux = mod;
+		aux /= k;
+		nr += _putchar((mod % 10) + '0');
+		k /= 10;
+	}
+	return (nr);
 }
-
-
 
