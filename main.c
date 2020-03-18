@@ -18,10 +18,8 @@ int main(void)
     _printf("Length:[%d, %i]\n", len, len2);
     printf("Length:[%d, %i]\n", len, len2);
         putchar('\n');
-        len = _printf("hola %");
-        putchar('\n');
-        len2 = printf("hola %");
-        putchar('\n');
+        len = _printf("hola &");
+        len2 = printf("hola &");
         _printf("Length:[%d, %i]\n", len, len2);
         printf("Length:[%d, %i]\n", len, len2);
         putchar('\n');
