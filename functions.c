@@ -68,7 +68,7 @@ int print_d(va_list argmnt)
 	{
 		aux = mod;
 		aux /= k;
-		nr += _putchar((mod % 10) + '0');
+		nr += _putchar((aux % 10) + '0');
 		k /= 10;
 	}
 	return (nr);
