@@ -52,6 +52,9 @@ Table of conversion specifiers
 | **%d** |  Double   | H       | print a decimal (base 10) number|
 | **%i** | Integer  | Holberton    |  print an integer in base 10 |
 
+# Flowchart
+![](https://github.com/Fabian-Andres/printf/blob/master/Untitled%20Diagram.jpg?raw=true)
+
 # Authors
 Sergio Steben Arias Quintero [![alt text][1.1]][2]
 Fabian Andres Riascos [![alt text][1.1]][1]
